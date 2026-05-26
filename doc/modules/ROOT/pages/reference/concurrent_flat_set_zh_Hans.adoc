@@ -323,11 +323,11 @@ When executed internally by a `boost::concurrent_flat_set`, the following operat
 * Read access to the element.
 * Non-mutable modification of the element.
 * Mutable modification of the element:
-** Within a container function accepting two visitation functions, always for the first function. ** Within a non-const container function whose name does not contain `cvisit`, for the last (or only) visitation function.
-
 Any `boost::concurrent_flat_set operation` that inserts or modifies an element `e` synchronizes with the internal invocation of a visitation function on `e`.
 
 Visitation functions executed by a `boost::concurrent_flat_set` `x` are not allowed to invoke any operation on `x`; invoking operations on a different `boost::concurrent_flat_set` instance `y` is allowed only if concurrent outstanding operations on `y` do not access `x` directly or indirectly.
+
+---
 
 ---
 
