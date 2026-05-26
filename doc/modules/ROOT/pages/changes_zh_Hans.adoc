@@ -97,35 +97,35 @@ data structures
 == Release 1.79.0
 
 * Improved {cpp}20 support:
-** All containers have been updated to support heterogeneous `count`, `equal_range` and `find`. ** All containers now implement the member function `contains`. ** `erase_if` has been implemented for all containers.
-* Improved {cpp}23 support:
-** All containers have been updated to support heterogeneous `erase` and `extract`.
-* Changed behavior of `reserve` to eagerly
 allocate ({github-pr-url}/59[PR#59^]).
+* All containers have been updated to support heterogeneous `count`, `equal_range` and `find`. ** All containers now implement the member function `contains`. ** `erase_if` has been implemented for all containers.
+** All containers have been updated to support heterogeneous `erase` and `extract`.
+* Improved {cpp}23 support:
+allocate ({github-pr-url}/59[PR#59^]).
+* All containers have been updated to support heterogeneous `erase` and `extract`.
+* Changed behavior of `reserve` to eagerly
 * Various warning fixes in the test suite.
 * Update code to internally use `boost::allocator_traits`.
-* Switch to Fibonacci hashing.
-* Update documentation to be written in AsciiDoc instead of QuickBook.
 
 == Release 1.67.0
 
 * Improved {cpp}17 support:
-** Add template deduction guides from the standard. ** Use a simple implementation of `optional` in node handles, so that they're closer to the standard. ** Add missing `noexcept` specifications to `swap`, `operator=` and node handles, and change the implementation to match. Using `std::allocator_traits::is_always_equal`, or our own implementation when not available, and `boost::is_nothrow_swappable` in the implementation.
-* Improved {cpp}20 support:
-** Use `boost::to_address`, which has the proposed {cpp}20 semantics, rather than the old custom implementation.
-* Add `element_type` to iterators, so that `std::pointer_traits`
 will work.
-* Use `std::piecewise_construct` on recent versions of Visual {cpp},
+* Improved {cpp}20 support:
 and other uses of the Dinkumware standard library, now using Boost.Predef to check compiler and library versions.
-* Use `std::iterator_traits` rather than the boost iterator traits
+* Improved {cpp}20 support:
 in order to remove dependency on Boost.Iterator.
-* Remove iterators' inheritance from `std::iterator`, which is
+* Use `boost::to_address`, which has the proposed {cpp}20 semantics, rather than the old custom implementation.
 deprecated in {cpp}17, thanks to Daniela Engert ({github-pr-url}/7[PR#7^]).
+* Add `element_type` to iterators, so that `std::pointer_traits`
+in order to remove dependency on Boost.Iterator.
+* Use `std::piecewise_construct` on recent versions of Visual {cpp},
+deprecated in {cpp}17, thanks to Daniela Engert ({github-pr-url}/7[PR#7^]).
+* Use `std::iterator_traits` rather than the boost iterator traits
+* Remove iterators' inheritance from `std::iterator`, which is
 * Stop using `BOOST_DEDUCED_TYPENAME`.
 * Update some Boost include paths.
 * Rename some internal methods, and variables.
-* Various testing improvements.
-* Miscellaneous internal changes.
 
 == Release 1.66.0
 
